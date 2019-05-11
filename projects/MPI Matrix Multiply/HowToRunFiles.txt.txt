@@ -1,0 +1,28 @@
+Compile and run code for part (1)
+
+1. module load gcc
+2. mpicc -std=c99 test_main.c -o testr -lm 
+3. qsub -l walltime=00::00:30 testr.sub
+
+walltime will depend on problem size.
+default is 1600
+
+*******************************************************************
+Compile and run code for part (2)
+
+1. module load intel
+2. mpicc -std=c99 test_main_Cannon_r2.c -o testc -lm 
+3. qsub -l walltime=00::00:30 testc.sub
+
+walltime will depend on problem size.
+default is 1600
+
+*******************************************************************
+Compile and run code for part (3)
+
+1. module load intel
+2. mpiicc -fopenmp -mkl test_main_mkl.c -o testm -lm 
+3. qsub -l walltime=00::00:30 testc.sub
+
+walltime will depend on problem size.
+default is 1600

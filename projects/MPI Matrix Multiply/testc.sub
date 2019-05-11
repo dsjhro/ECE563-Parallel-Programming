@@ -1,0 +1,10 @@
+#!/bin/sh -l
+# FILENAME:  testc.sub
+#PBS -l nodes=1:ppn=16,walltime=00:09:00
+#PBS -q long
+
+cd $PBS_O_WORKDIR
+uniq <$PBS_NODEFILE >nodefile
+mpiexec -n 1 -machinefile nodefile ./testc
+mpiexec -n 4 -machinefile nodefile ./testc
+mpiexec -n 16 -machinefile nodefile ./testc
